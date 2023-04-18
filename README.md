@@ -2,7 +2,10 @@
 
 Integrantes
 
-baltazar ferreyra
-Castelli Nicolás 
-Monforte Oscar f.
-Vera Emilio A.
+* Ferreyra Baltazar
+
+* Castelli Nicolás 
+
+* Monforte Oscar f.
+
+* Vera Emilio A.
