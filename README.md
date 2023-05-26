@@ -6,6 +6,6 @@ Integrantes
 
 * Castelli Nicolás 
 
-* Monforte Oscar f.
+* Monforte Palacios Oscar Fernando
 
 * Vera Emilio A.
