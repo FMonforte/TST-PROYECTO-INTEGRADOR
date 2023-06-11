@@ -1,26 +1,34 @@
 import conexion
 
 # Crear una instancia del conector de base de datos
-conexion_bd = conexion.Conexion(host="localhost", user="root", password="31646323", database="proyectointegradorv01")
+# Ingresar la contraseña de su Local
+conexion_bd = conexion.Conexion(
+    host="localhost",
+    user="root",
+    password="",
+    database="proyectointegradorv01"
+)
 
 # Conectar a la base de datos
 conexion_bd.connect()
 
-# Leer los propietarios desde la tabla
-propietarios = conexion_bd.leer_propietarios()
-for propietario in propietarios:
-    print(propietario)
+# Leer los dispositivos desde la tabla
+dispositivos = conexion_bd.leer_dispositivos()
+for dispositivo in dispositivos:
+    print(dispositivo)
 
-print("Fin tabla propietarios")
+print("Fin tabla dispositivos")
 
-conexion_bd.ingresar_propietario(id_propietario=1, nombre="Juan", apellido="Pérez", fecha_nacimiento="1990-01-01")
 
-# Leer los propietarios desde la tabla
-propietarios = conexion_bd.leer_propietarios()
-for propietario in propietarios:
-    print(propietario)
+# Ingresar dispositivo en la tabla
+conexion_bd.ingresar_dispositivo(
+    modelo="Example", numero_de_serie="NroEx", direccion="DirEx", fecha="1990-01-01", coordenadas="CorEx", estado="EsEx")
 
-print("Fin tabla propietarios")
+dispositivos = conexion_bd.leer_dispositivos()
+for dispositivo in dispositivos:
+    print(dispositivo)
+
+print("Fin tabla dispositivos")
 
 # Desconectar de la base de datos
 conexion_bd.disconnect()

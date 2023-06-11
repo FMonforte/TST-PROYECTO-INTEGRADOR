@@ -1,5 +1,6 @@
 import mysql.connector
 
+
 class Conexion:
     def __init__(self, host, user, password, database):
         self.host = host
@@ -23,10 +24,10 @@ class Conexion:
             self.connection.close()
             print("Desconexión")
 
-    def leer_propietarios(self):
+    def leer_dispositivos(self):
         if self.connection.is_connected():
             cursor = self.connection.cursor()
-            query = "SELECT * FROM Propietario"
+            query = "SELECT * FROM Dispositivos"
             cursor.execute(query)
             propietarios = cursor.fetchall()
             cursor.close()
@@ -34,11 +35,12 @@ class Conexion:
         else:
             print("No hay conexión a la base de datos")
 
-    def ingresar_propietario(self, id_propietario, nombre, apellido, fecha_nacimiento):
+    def ingresar_dispositivo(self, modelo, numero_de_serie, direccion, fecha, coordenadas, estado):
         if self.connection.is_connected():
             cursor = self.connection.cursor()
-            query = "INSERT INTO Propietario (id_Propietario, Nombre, Apellido, FechaNacimiento) VALUES (%s, %s, %s, %s)"
-            values = (id_propietario, nombre, apellido, fecha_nacimiento)
+            query = "INSERT INTO Dispositivos (modelo, numero_de_serie, direccion_de_instalacion, fecha, coordenadas, "\
+                    "estado) VALUES (%s, %s, %s, %s, %s, %s)"
+            values = (modelo, numero_de_serie, direccion, fecha, coordenadas, estado)
             cursor.execute(query, values)
             self.connection.commit()
             cursor.close()
