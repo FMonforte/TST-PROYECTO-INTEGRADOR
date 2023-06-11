@@ -29,9 +29,9 @@ class Conexion:
             cursor = self.connection.cursor()
             query = "SELECT * FROM Dispositivos"
             cursor.execute(query)
-            propietarios = cursor.fetchall()
+            dispositivos = cursor.fetchall()
             cursor.close()
-            return propietarios
+            return dispositivos
         else:
             print("No hay conexión a la base de datos")
 
