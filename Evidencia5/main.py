@@ -6,7 +6,7 @@ while True:
     print("1. Ingresar Dispositivos")
     print("2. Consultar Dispositivos")
     print("3. Actualizar Dispositivos")
-    print("2. Eliminar Dispositivos")
+    print("4. Eliminar Dispositivos")
     print("Presione letra Q para salir")
 
     opcion = input("Seleccione una opcion: ")
